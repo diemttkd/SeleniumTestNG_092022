@@ -6,17 +6,14 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
         public class RunTestNG {
             WebDriver driver;
 
-            @BeforeMethod
+            @BeforeClass
             public void createDriver() {
                 //WebDriverManager.chromedriver().setup();
                 driver = new EdgeDriver();
@@ -41,7 +38,7 @@ import java.time.Duration;
                 Thread.sleep(2000);
             }
 
-            @AfterMethod
+            @AfterClass
             public void closeDriver() {
                 driver.quit();
             }
